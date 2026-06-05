@@ -11,7 +11,7 @@ Date: 2026-06-05
 - Styles: `styles.css` — background, fixed header behavior, precise pixel positioning for design assets and footer.
 - Scripts: `script.js` — header scroll state, smooth scrolling for nav anchors, current year injection.
 - Assets: PDFs under `public/pdfs/`; images under `public/images/` (footer, design, branding-projects).
-- Last change: Updated branding project image paths and set resume PDF anchors to `download target="_blank" rel="noopener"`.
+- Last change: Updated branding project image paths and set resume PDF anchors to open in a new tab (`target="_blank" rel="noopener"`).
 
 ## Tasks Completed
 - Sticky header with subtle scrolled border.
