@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const rect = targetEl.getBoundingClientRect();
       // default small offset
       let extraOffset = 8;
-      // for the 'about' link, scroll a bit higher so the section appears slightly lower in view
-      if (targetId === 'about-section__text') extraOffset = 48;
+      // for the 'about' link, scroll higher so the section appears more below the header
+      if (targetId === 'about-section__text') extraOffset = 88;
       const top = rect.top + window.scrollY - headerHeight - extraOffset;
       window.scrollTo({ top: top, behavior: 'smooth' });
     });
