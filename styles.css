@@ -315,13 +315,13 @@ body {
 
 .feature-row-section {
   position: relative;
-  height: 730px;
+  height: 600px;
   margin-bottom: 1.5rem;
 }
 
 .feature-row__text {
   position: absolute;
-  top: 116px;
+  top: 66px;
   left: 50%;
   transform: translateX(-50%);
   height: 32px;
@@ -330,7 +330,7 @@ body {
 
 .feature-row__line {
   position: absolute;
-  top: 153px;
+  top: 103px;
   left: 50%;
   transform: translateX(-50%);
   width: 236px;
@@ -351,22 +351,22 @@ body {
 }
 
 .feature-row__item--smartkids {
-  top: 200px;
+  top: 150px;
   left: 96px;
 }
 
 .feature-row__item--la-maline {
-  top: 200px;
+  top: 150px;
   left: 394px;
 }
 
 .feature-row__item--music {
-  top: 200px;
+  top: 150px;
   left: 692px;
 }
 
 .feature-row__item--winera {
-  top: 200px;
+  top: 150px;
   left: 990px;
 }
 
@@ -548,7 +548,7 @@ body {
 .site-footer {
   position: relative;
   height: 410px;
-  margin-top: auto;
+  margin-top: -40px;
   padding: 0;
   text-align: center;
   color: #64748b;
