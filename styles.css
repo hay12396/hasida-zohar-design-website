@@ -633,3 +633,69 @@ code {
     scroll-behavior: auto !important;
   }
 }
+
+/* -----------------------------
+   Desktop fallback (narrow desktops)
+   When viewport is smaller than 1360px (still desktop/tablet range),
+   request a 1360px desktop layout by enforcing a minimum width so
+   the page renders as the 1360px design (horizontal scroll available).
+   This does not affect phones (handled below).
+   ----------------------------- */
+@media (max-width: 1360px) and (min-width: 768px) {
+  html, body, .page-shell {
+    min-width: 1360px;
+  }
+}
+
+/* -----------------------------
+   Mobile responsive overrides
+   For phones (max-width: 767px) we override desktop positioning
+   to make the layout flow and images scale. This only applies to
+   small screens and will not change desktop styles.
+   ----------------------------- */
+@media (max-width: 767px) {
+  html, body { min-width: 0; width: 100%; overflow-x: hidden; }
+  .container { padding-left: 16px; padding-right: 16px; max-width: 100%; }
+
+  /* Make header fixed but compact on mobile */
+  .top-header { position: fixed; top: 0; left: 0; right: 0; z-index: 999; }
+  .top-header__inner { display:flex; align-items:center; justify-content:space-between; }
+
+  /* Turn absolutely positioned, decorative sections into normal flow */
+  .site-header,
+  .about-section,
+  .process-section,
+  .feature-row-section,
+  .design-section,
+  .site-footer {
+    position: static !important;
+    width: 100% !important;
+  }
+
+  img { max-width: 100% !important; height: auto !important; display: block; }
+
+  /* Feature row: stack items vertically */
+  .feature-row__text,
+  .feature-row__line,
+  .feature-row__item { display: block; margin: 12px auto; max-width: 90%; }
+
+  /* Design section: flow layout for boxes and mocks */
+  .design-section__box,
+  .design-section__overlay,
+  .design-section__mock,
+  .design-section__text,
+  .design-section__text2,
+  .design-section__text3,
+  .design-section__feather {
+    position: static !important;
+    margin: 12px auto !important;
+    transform: none !important;
+  }
+
+  /* Footer socials inline and centered */
+  .site-footer__socials { display:flex; justify-content:center; gap:12px; padding: 12px 0; }
+
+  /* Ensure main content doesn't sit beneath fixed header */
+  main { margin-top: calc(var(--header-height, 56px) + 8px); }
+}
+
