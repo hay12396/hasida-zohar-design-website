@@ -41,4 +41,18 @@ document.addEventListener('DOMContentLoaded', function () {
       window.scrollTo({ top: top, behavior: 'smooth' });
     });
   });
+
+  // Click handler for header button (visual CTA) to view projects
+  const viewProjectsButton = document.querySelector('.header-asset--button');
+  if (viewProjectsButton) {
+    viewProjectsButton.style.cursor = 'pointer';
+    viewProjectsButton.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      const targetEl = document.querySelector('.feature-row__text');
+      if (!targetEl) return;
+      const rect = targetEl.getBoundingClientRect();
+      const top = rect.top + window.scrollY - headerHeight - 8;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  }
 });
