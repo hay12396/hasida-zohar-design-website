@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      (function(){
+        try {
+          var isPhone = /Mobi|Android/i.test(navigator.userAgent) || (window.screen && window.screen.width <= 767);
+          if (isPhone) {
+            var m = document.querySelector('meta[name="viewport"]');
+            if (m) m.setAttribute('content', 'width=1360');
+          }
+        } catch (e) { /* silent */ }
+      })();
+    </script>
     <title>Hasida New Website</title>
     <link rel="stylesheet" href="styles.css">
   </head>
