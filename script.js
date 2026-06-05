@@ -37,7 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!targetEl) targetEl = document.querySelector('.' + targetId);
       if (!targetEl) return;
       const rect = targetEl.getBoundingClientRect();
-      const top = rect.top + window.scrollY - headerHeight - 8; // small offset
+      // default small offset
+      let extraOffset = 8;
+      // for the 'about' link, scroll a bit higher so the section appears slightly lower in view
+      if (targetId === 'about-section__text') extraOffset = 48;
+      const top = rect.top + window.scrollY - headerHeight - extraOffset;
       window.scrollTo({ top: top, behavior: 'smooth' });
     });
   });
